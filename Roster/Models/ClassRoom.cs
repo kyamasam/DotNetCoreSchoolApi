@@ -2,12 +2,14 @@ using System.Collections.Generic;
 
 namespace Roster.Models
 {
-    public class Class
+    public class ClassRoom
     {
-        public int Id { get; set; }
+        public int ClassRoomId { get; set; }
         public string Name { get; set; }
-        public Teacher Teacher { get; set; }
+        public int SchoolId { get; set; }
+        public ICollection<Teacher> Teachers { get; set; }
 
-        public ICollection<Student> Students { get; set; }
+        public virtual School Schools { get; set; }
+
     }
 }
